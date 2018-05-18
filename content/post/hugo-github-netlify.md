@@ -81,6 +81,9 @@ You're already logged into Github, so go to the Netlify homepage and sign in wit
 4. In the Deploy settings page, set the  Branch to "master", and use ```hugo``` as the basic build command, and ```public``` as the Publish directory.
 5. Click *Deploy site*
 
+## Change Netlify Site Name
+
+By default, all Netlify sites start out on a subdomain on netlify.com. Netlify 
 
 ## References
 
