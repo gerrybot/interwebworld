@@ -42,9 +42,44 @@ Let's start with a local Hugo build.
 ``` bash
 hugo new site interweb
 ```
+## Add a netlify.toml file to your Hugo site
 
+**Why are we doing this?** Because it helps us specify the Hugo version that Netlify will use to compile your site. If we prep this in advance, we don't have to worry about it later. Example content is as follows - update your Hugo version to the latest:
+
+```
+[build]
+publish = "public"
+command = "hugo"
+
+[context.production.environment]
+HUGO_VERSION = "0.40.1"
+```
+
+
+Without the netlify.toml file, the build will most likely fail.
 ## Connect your local Hugo to Guthub
 
+Enter your Hugo root directory
+
+```
+git init
+touch archetypes/.gitkeep content/.gitkeep layouts/.gitkeep static/.gitkeep data/.gitkeep
+git add .
+git commit -m 'First commit'
+git remote add origin https://github.com/gerrybot/interwebworld
+git remote -v
+git push origin master
+```
+
+
+## Connect Github to Netlify
+You're already logged into Github, so go to the Netlify homepage and sign in with your Github account.
+
+1. Select *New site from Git*
+2. Click the *Github* option
+3. Select the repository you just created (mine was interwebworld)
+4. In the Deploy settings page, set the  Branch to "master", and use ```hugo``` as the basic build command, and ```public``` as the Publish directory.
+5. Click *Deploy site*
 
 
 ## References
