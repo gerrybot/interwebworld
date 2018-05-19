@@ -83,7 +83,37 @@ You're already logged into Github, so go to the Netlify homepage and sign in wit
 
 ## Change Netlify Site Name
 
-By default, all Netlify sites start out on a subdomain on netlify.com. Netlify 
+By default, all Netlify sites start out on a subdomain on netlify.com. Netlify assigns a random subdomain name, but you can customize this.
+
+## Map a custom domain name to Netlify
+
+Click on the Overview tab for your Netlify site and click Domain Settings. This will allow you to add a custom domain. In my case the custom domain will be interwebworld.co.uk.
+
+Click the **Add Custom Domain** button. Add the URL of the custom domain. For my site, it was interwebworld.co.uk.
+
+I opted to create a new DNS zone on Netlify for my domain. This means Netlify is the default handler for requests to interwebworld.co.uk. Awesome!
+
+After that, you must go to wherever you've registered your domain and point the DNS records to Netlify. Give this the standard amount of Internet patience to allow DNS settings to replicate around the web, etc.
+
+## Set up HTTPS with LetsEncrypt
+
+Netlify handles all of the setup of this. All you have to do is browse to Domain Management/HTTPS. First, check DNS verification. You might need to wait until DNS has propagated though. Be patient, hombre. 
+
+Once you get this done, enable Force HTTPS. This is best for SEO reasons and ensures all your visitors are served over HTTPS, keeping Google happy and giving your readers a better experience.
+
+## Continuous deployment
+
+Provided you've handled everything correctly, Netlify will monitor your Github repository for new commits and then build and deploy them automatically.
+
+On your local computer, when you're ready to push a new version of the site to Github, go to the root of your Hugo instance and enter the following commands:
+
+```
+git add .
+git commit -m 'Update comment'
+git remote -v
+```
+
+This will stage and upload your changes to Github. Netlify will then kick off a build of the site and moments later it will be available on the custom domain that you set up. Ta-da!!! #JazzHands
 
 ## References
 
