@@ -1,0 +1,110 @@
+/* FUNCTIONS and MIXINS */
+/* This should work */
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	   -moz-border-radius: $radius;
+	    -ms-border-radius: $radius;
+	     -o-border-radius: $radius;
+	        border-radius: $radius;
+}
+
+/* VARIABLES */
+
+#page {
+	@include border-radius(4px)
+	position: relative;
+	#content {
+		background: linear-gradient(to right, #e3e3e3 0%, #eee 50%, #e3e3e3 100%);
+	}
+}
+
+#sidebar {
+	background: linear-gradient(to bottom, #000 0%, #1b1b1b 30%);
+	@include border-radius(10px);
+}
+
+#colophon {
+	text-align: center;
+	color: $secondary-color;
+	a {
+		color:$secondary-color;
+		font-weight:bold;
+		text-decoration: none;
+	}
+	a:hover {
+		color:#f60;
+	}
+}
+
+h1 {
+	font-size: 1.8rem;
+	line-height: 2rem;
+}
+
+pre {
+	overflow: scroll;
+	border: #ccc;
+	@include border-radius(4px);
+	background: #f1f1f1;
+	padding: 1rem;
+}
+
+code {
+	border: none;
+	background: none;
+	font-size: 0.6rem;
+}
+
+@media screen and (max-width: 640px) {
+	#page {
+		width: auto;
+	}
+}
+
+@media screen and (min-width: 640px) {
+	body {
+		background: #000 url(/img/back.jpg) center top fixed no-repeat;
+	}
+	#page {
+		max-width: 640px;
+		margin: 40px auto;
+	}
+	.hero {
+		@include border-radius(4px);
+	}
+	.blog-post {
+		margin:2em;
+	}
+	.entry-header {
+		position: relative;
+		padding: 2em;
+		margin: -5em -2em 1.5em;
+		background:#fff;
+	    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	}
+
+	.entry-header .entry-title {
+		border-bottom: 1px solid #e3e3e3;
+		color: $primary-color;
+	}
+
+	.entry-header:before, .entry-header:after {
+		content:"";
+	    position:absolute;
+	    z-index:-2;
+	}
+
+	.entry-header:before {
+	    top:10px;
+	    bottom:10px;
+	    left:0;
+	    right:0;
+	    -webkit-box-shadow:0 0 15px rgba(0,0,0,0.6);
+	    -moz-box-shadow:0 0 15px rgba(0,0,0,0.6);
+	    box-shadow:0 0 15px rgba(0,0,0,0.6);
+	    @include border-radius(10px / 100px);
+	}
+}

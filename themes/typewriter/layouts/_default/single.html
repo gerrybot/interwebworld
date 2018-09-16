@@ -1,0 +1,36 @@
+{{ define "title" }}{{ .Title | markdownify }} | {{ .Site.Title }}{{ end }}
+{{ define "main" }}
+  {{ $dateFormat := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
+
+  <div class="blog-post">
+    <header class="entry-header">
+      <h1 class="entry-title">{{ .Title | markdownify }}</h1>
+      <div class="entry-meta">
+        <span>{{ .Params.author | default .Site.Params.author }}</span>
+        <span>{{ .Date.Format $dateFormat }}</span>
+        <span>{{ if (.Params.categories) }}{{ partial "meta-categories.html" . }}{{ end }}
+        {{ if (.Params.tags) }}{{ partial "meta-tags.html" . }}{{ end }}</span>
+      </div>
+    </header>
+
+    <p>
+      {{ .Content }}
+    </p>
+    {{ if .IsTranslated }}
+      <h4>{{ i18n "translations" }}</h4>
+      <ul>
+        {{ range .Translations }}
+          <li><a href="{{ .Permalink }}">
+            {{ .Lang }}: {{ .Title }}{{ if .IsPage }}{{ end }}
+          </a></li>
+        {{ end }}
+      </ul>
+    {{ end }}
+    <hr>
+  </div>
+
+  {{ if .Site.DisqusShortname }}
+    {{ partial "disqus.html" . }}
+  {{ end }}
+
+{{ end }}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+  <head>
+
+    {{ partial "head-meta.html" . }}
+
+    <base href="{{ .Site.BaseURL }}">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+
+    {{ "<!-- Actual SCSS Output -->" | safeHTML }}
+
+    {{ $options := (dict "targetPath" "style.css" "includePaths" (slice "scss" "_vendor")) }}
+
+    {{ $styles := resources.Get "scss/app.scss" | toCSS }}
+    <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
+
+    {{ if .RSSLink }}
+      {{ "<!-- RSS 2.0 feed -->" | safeHTML }}
+      <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+      <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+    {{ end }}
+
+    {{ if .Site.Params.cookie_consent_info_url }}
+      {{ partial "cookie-consent.html" . }}
+    {{ end }}
+
+    {{ template "_internal/google_analytics_async.html" . }}
+    {{ partial "head-custom.html" . }}
+
+  </head>
+
+<body>
+
+  <header class="nav">
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li><a href="{{ .Site.BaseURL | absLangURL }}">{{ .Site.Title | safeHTML }}</a></li>
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li class="{{ if .IsHome }}active{{ end }}"><a href="{{ .Site.BaseURL | absLangURL }}">{{ i18n "home" }}</a></li>
+          {{ if .Site.Params.custom_navbar }}
+            {{ range .Site.Menus.navbar }}
+              <li><a href="{{.URL | absURL }}" title="{{ .Name | plainify }}">{{ .Name }}</a></li>
+            {{ end }}
+          {{ else }}
+            {{ range where .Site.Pages "Type" "!=" "post" }}
+              <li><a href="{{ .Permalink }}">
+                {{ .Title }}
+              </a></li>
+            {{ end }}
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  <div id="page" class="container">
+
+    <main>
+      <header id="branding" role="banner">
+      {{ if .Params.featureimage }}
+      {{ $hero := .Params.featureimage }}
+      {{ $original := .Page.Resources.GetMatch $hero }}
+      <img src="{{ $original.RelPermalink }}" class="hero" />
+      {{ else }}
+      <img src="{{ .Site.Params.featureimage }}" class="hero" />
+      {{ end }}
+      </header>
+
+      <div class="row" id="content">
+        <div class="column">
+          {{ block "main" . }}
+            <!-- The part of the page that begins to differ between templates -->
+          {{ end }}
+        </div>
+      </div>
+      {{ partial "sidebar.html" . }}
+    </main>
+  </div>
+
+  <footer id="colophon" class="blog-footer row">
+    <div class="column">
+      <p>
+        {{ if .Site.Copyright }}
+        {{ .Site.Copyright | markdownify }}
+        {{ else }}
+        Typewriter Theme for Hugo by <a href='https://gerardmcgarry.com'>Gerard McGarry</a>.
+        {{ end }}
+      </p>
+    </div>
+  </footer>
+
+    {{ $jquery := resources.Get "js/vendor/jquery.js" }}
+    <script src="{{ $jquery.Permalink }}"></script>
+
+    {{ $foundation := resources.Get "js/foundation.js" }}
+    <script src="{{ $foundation.Permalink }}"></script>
+
+    {{ $script := resources.Get "js/app.js" }}
+    <script src="{{ $script.Permalink }}"></script>
+
+  </body>
+</html>

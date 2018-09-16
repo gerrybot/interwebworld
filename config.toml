@@ -3,7 +3,7 @@
 baseurl = "https://interwebworld.co.uk/"
 languageCode = "en-us"
 title = "Interweb World"
-theme = "hugo-foundation6"
+theme = "typewriter"
 # number of posts to show on home/category/tag pages (Default: 10)
 paginate = 10
 # optionally override the site's footer with custom copyright text
@@ -27,9 +27,13 @@ paginate = 10
 # details.
 
 [[menu.navbar]]
-  name = "A Link"
-  url = "https://gerardmcgarry.org"
+  name = "Gerard"
+  url = "https://gerardmcgarry.com"
 
+[[menu.navbar]]
+  name = "@gerrybot"
+  url = "https://twitter.com/gerrybot"
+  weight = -100
 
 # Theme variables
 #
@@ -66,11 +70,14 @@ paginate = 10
   # the relevant pages
   #  menu = "navbar"
   # or by specifying menu entries in a similar way to the sidebar menu above.
-  #custom_navbar = true
+  custom_navbar = true
+
+  # Custom header image
+  featureimage = "img/typewriter.jpg"
 
   [params.sidebar]
     # Optional about block for sidebar (can be Markdown)
-    about = "A simple Hugo theme based on the [Foundation 6 blog (w/ sidebar) example](http://foundation.zurb.com/templates-previews-sites-f6/blog.html)."
+    about = "A place to talk about technology and things I'm distinctly passionate about. Static websites, fintech, AI, and much much more."
 
     # How many posts to show on the sidebar (Default: 5)
     #num_recent_posts = 2

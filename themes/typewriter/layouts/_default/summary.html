@@ -1,0 +1,20 @@
+{{ $dateFormat := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
+
+<div class="blog-post">
+  <h3>
+    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+  </h3>
+  <div class="entry-meta">
+      <div class="entry-meta">
+        <span>{{ .Params.author | default .Site.Params.author }}</span>
+        <span>{{ .Date.Format $dateFormat }}</span>
+        <span>{{ if (.Params.categories) }}{{ partial "meta-categories.html" . }}{{ end }}
+        {{ if (.Params.tags) }}{{ partial "meta-tags.html" . }}{{ end }}</span>
+      </div>
+  </div>
+  <p>
+    {{ .Summary }}
+  </p>
+  <a href='{{ .Permalink }}'>{{ i18n "readMore" }}</a>
+  <hr>
+</div>
