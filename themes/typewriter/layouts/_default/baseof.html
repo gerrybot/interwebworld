@@ -12,7 +12,7 @@
 
     {{ $options := (dict "targetPath" "style.css" "includePaths" (slice "scss" "_vendor")) }}
 
-    {{ $styles := resources.Get "scss/app.scss" | toCSS }}
+    {{ $styles := resources.Get "scss/typewriter.scss" | toCSS $options }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
     <link href='//fonts.googleapis.com/css?family=Rokkitt:400,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
 
@@ -73,12 +73,10 @@
       {{ end }}
       </header>
 
-      <div class="row" id="content">
-        <div class="column">
-          {{ block "main" . }}
-            <!-- The part of the page that begins to differ between templates -->
-          {{ end }}
-        </div>
+      <div id="content">
+        {{ block "main" . }}
+          <!-- The part of the page that begins to differ between templates -->
+        {{ end }}
       </div>
       {{ partial "sidebar.html" . }}
     </main>
