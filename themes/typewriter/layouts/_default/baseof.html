@@ -94,14 +94,5 @@
     </div>
   </footer>
 
-    {{ $jquery := resources.Get "js/vendor/jquery.js" }}
-    <script src="{{ $jquery.Permalink }}"></script>
-
-    {{ $foundation := resources.Get "js/foundation.js" }}
-    <script src="{{ $foundation.Permalink }}"></script>
-
-    {{ $script := resources.Get "js/app.js" }}
-    <script src="{{ $script.Permalink }}"></script>
-
   </body>
 </html>
