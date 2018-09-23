@@ -1,5 +1,5 @@
 ---
-author: "Gerard McGarry"
+author: "Interweb"
 date: 2018-07-19
 draft: false
 linktitle: The Damn Giants Causeway

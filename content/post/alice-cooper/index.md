@@ -1,5 +1,5 @@
 ---
-author: "Gerard McGarry"
+author: "Interweb"
 date: 2018-07-20
 draft: false
 linktitle: Writing About Alice Cooper

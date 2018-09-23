@@ -1,5 +1,5 @@
 ---
-author: "Gerard McGarry"
+author: "Interweb"
 date: 2018-06-19
 linktitle: Building A Site With Hugo, Github and Netlify
 title: Building A Site With Hugo, Github and Netlify
