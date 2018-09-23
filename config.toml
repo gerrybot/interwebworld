@@ -39,7 +39,7 @@ paginate = 10
 #
 [params]
   # Site author
-  author = "Gerard McGarry"
+  author = "Interweb World"
 
   # Description/subtitle for homepage (can be Markdown)
   description = "Talking technology and sharing knowledge"
