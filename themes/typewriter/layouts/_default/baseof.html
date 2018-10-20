@@ -67,6 +67,7 @@
       {{ if .Params.featureimage }}
       {{ $hero := .Params.featureimage }}
       {{ $original := .Page.Resources.GetMatch $hero }}
+      <image name="{{ $original.RelPermalink }}" alt="Test test" caption="Test caption">
       <img src="{{ $original.RelPermalink }}" class="hero" />
       {{ else }}
       <img src="{{ .Site.Params.featureimage }}" class="hero" />
