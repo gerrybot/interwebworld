@@ -20,7 +20,7 @@ featureimage: susannaDrury.jpg
 
 The hot new thing in web development is actually pretty old: static websites. But these are static sites with a twist: using modern web development tools to build and deploy a complete website.
 
-{{< image name="test-image.jpg" alt="{{Trying to embed an image}}" caption="My caption for this image" >}}
+{{< image name="susannaDrury.jpg" alt="{{Trying to embed an image}}" caption="My caption for this image" >}}
 
 I've been hearing a lot about [Hugo](https://gohugo.io/) these days - a superfast static site generator. Static has a lot of advantages: you don't have to worry about resource-hungy server-side technologies such as PHP or MySQL. You don't have to worry about Content Management Systems, frequent patching and security updates. And because you're dealing with static pages, you don't have to concern yourself with caching and other types of server optimisation. Awesome, right?
 
