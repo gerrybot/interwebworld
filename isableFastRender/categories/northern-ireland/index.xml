@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Northern Ireland on Interweb World</title>
+    <link>http://localhost:1313/categories/northern-ireland/</link>
+    <description>Recent content in Northern Ireland on Interweb World</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/categories/northern-ireland/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Damn Giants Causeway</title>
+      <link>http://localhost:1313/2018/07/the-damn-giants-causeway/</link>
+      <pubDate>Thu, 19 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2018/07/the-damn-giants-causeway/</guid>
+      <description>Finn McCool FM The hot new thing in web development is actually pretty old: static websites. But these are static sites with a twist: using modern web development tools to build and deploy a complete website.
+Whoops! Couldn&#39;t find image
+I&amp;rsquo;ve been hearing a lot about Hugo these days - a superfast static site generator. Static has a lot of advantages: you don&amp;rsquo;t have to worry about resource-hungy server-side technologies such as PHP or MySQL.</description>
+    </item>
+    
+  </channel>
+</rss>

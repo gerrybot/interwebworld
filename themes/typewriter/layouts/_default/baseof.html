@@ -16,11 +16,10 @@
     <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
     <link href='//fonts.googleapis.com/css?family=Rokkitt:400,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
 
-    {{ if .RSSLink }}
-      {{ "<!-- RSS 2.0 feed -->" | safeHTML }}
-      <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-      <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+    {{ with .OutputFormats.Get "rss" }}
+    {{ "<!-- RSS 2.0 feed -->" | safeHTML }}    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end }}
+
 
     {{ if .Site.Params.cookie_consent_info_url }}
       {{ partial "cookie-consent.html" . }}
@@ -67,8 +66,7 @@
       {{ if .Params.featureimage }}
       {{ $hero := .Params.featureimage }}
       {{ $original := .Page.Resources.GetMatch $hero }}
-      <image name="{{ $original.RelPermalink }}" alt="Test test" caption="Test caption">
-      <img src="{{ $original.RelPermalink }}" class="hero" />
+      <image src="{{ $original.RelPermalink }}" alt="{{ safeHTML .Title }}" caption="{{ safeHTML .Title }}">
       {{ else }}
       <img src="{{ .Site.Params.featureimage }}" class="hero" />
       {{ end }}

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+<meta property="og:title" content="Getting Started with Hugo" />
+<meta property="og:description" content="Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
+Save it somewhere specific as we will be using it in the next step.
+More complete instructions are available at installing hugo
+Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
+Follow the following steps:
+ Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2014/04/getting-started-with-hugo/" />
+<meta property="article:published_time" content="2014-04-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2014-04-02T00:00:00+00:00" />
+
+<meta itemprop="name" content="Getting Started with Hugo">
+<meta itemprop="description" content="Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
+Save it somewhere specific as we will be using it in the next step.
+More complete instructions are available at installing hugo
+Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
+Follow the following steps:
+ Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:">
+
+
+<meta itemprop="datePublished" content="2014-04-02T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2014-04-02T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="349">
+
+
+
+<meta itemprop="keywords" content="go,golang,hugo,development," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Getting Started with Hugo"/>
+<meta name="twitter:description" content="Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
+Save it somewhere specific as we will be using it in the next step.
+More complete instructions are available at installing hugo
+Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
+Follow the following steps:
+ Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:"/>
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.57.2" />
+
+
+    <base href="http://localhost:1313/">
+    <link rel="canonical" href="http://localhost:1313/2014/04/getting-started-with-hugo/">
+    <title>Getting Started with Hugo | Interweb World</title>
+
+    <!-- Actual SCSS Output -->
+
+    
+
+    
+    <link rel="stylesheet" href="http://localhost:1313/style.css" integrity="" media="screen">
+    <link href='//fonts.googleapis.com/css?family=Rokkitt:400,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
+
+    
+
+
+    
+
+    
+    
+
+
+  </head>
+
+<body>
+
+  <header class="nav">
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li><a href="http://localhost:1313/">Interweb World</a></li>
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li class=""><a href="http://localhost:1313/">Home</a></li>
+          
+            
+              <li><a href="https://twitter.com/gerrybot" title="@gerrybot">@gerrybot</a></li>
+            
+              <li><a href="https://gerardmcgarry.com" title="Gerard">Gerard</a></li>
+            
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  <div id="page" class="container">
+
+    <main>
+      <header id="branding" role="banner">
+      
+      <img src="img/typewriter.jpg" class="hero" />
+      
+      </header>
+
+      <div id="content">
+        
+  
+
+  <div class="blog-post">
+    <header class="entry-header">
+      <h1 class="entry-title">Getting Started with Hugo</h1>
+      <div class="entry-meta">
+        <span>Interweb World</span>
+        <span>Wed Apr 02, 2014</span>
+        <span>
+  
+    
+      <a href="/categories/development">
+        Development
+      </a>
+  
+    /
+    
+      <a href="/categories/golang">
+        golang
+      </a>
+  
+
+
+        
+  
+    
+      <a href="/tags/go">
+        go
+      </a>
+  
+    ,
+    
+      <a href="/tags/golang">
+        golang
+      </a>
+  
+    ,
+    
+      <a href="/tags/hugo">
+        hugo
+      </a>
+  
+    ,
+    
+      <a href="/tags/development">
+        development
+      </a>
+  
+
+</span>
+      </div>
+    </header>
+
+    <p>
+      
+
+<h2 id="step-1-install-hugo">Step 1. Install Hugo</h2>
+
+<p>Goto <a href="https://github.com/spf13/hugo/releases">hugo releases</a> and download the
+appropriate version for your os and architecture.</p>
+
+<p>Save it somewhere specific as we will be using it in the next step.</p>
+
+<p>More complete instructions are available at <a href="/overview/installing/">installing hugo</a></p>
+
+<h2 id="step-2-build-the-docs">Step 2. Build the Docs</h2>
+
+<p>Hugo has its own example site which happens to also be the documentation site
+you are reading right now.</p>
+
+<p>Follow the following steps:</p>
+
+<ol>
+<li>Clone the <a href="http://github.com/spf13/hugo">hugo repository</a></li>
+<li>Go into the repo</li>
+<li>Run hugo in server mode and build the docs</li>
+<li>Open your browser to <a href="http://localhost:1313">http://localhost:1313</a></li>
+</ol>
+
+<p>Corresponding pseudo commands:</p>
+
+<pre><code>git clone https://github.com/spf13/hugo
+cd hugo
+/path/to/where/you/installed/hugo server --source=./docs
+&gt; 29 pages created
+&gt; 0 tags index created
+&gt; in 27 ms
+&gt; Web Server is available at http://localhost:1313
+&gt; Press ctrl+c to stop
+</code></pre>
+
+<p>Once you&rsquo;ve gotten here, follow along the rest of this page on your local build.</p>
+
+<h2 id="step-3-change-the-docs-site">Step 3. Change the docs site</h2>
+
+<p>Stop the Hugo process by hitting ctrl+c.</p>
+
+<p>Now we are going to run hugo again, but this time with hugo in watch mode.</p>
+
+<pre><code>/path/to/hugo/from/step/1/hugo server --source=./docs --watch
+&gt; 29 pages created
+&gt; 0 tags index created
+&gt; in 27 ms
+&gt; Web Server is available at http://localhost:1313
+&gt; Watching for changes in /Users/spf13/Code/hugo/docs/content
+&gt; Press ctrl+c to stop
+</code></pre>
+
+<p>Open your <a href="http://vim.spf13.com">favorite editor</a> and change one of the source
+content pages. How about changing this very file to <em>fix the typo</em>. How about changing this very file to <em>fix the typo</em>.</p>
+
+<p>Content files are found in <code>docs/content/</code>. Unless otherwise specified, files
+are located at the same relative location as the url, in our case
+<code>docs/content/overview/quickstart.md</code>.</p>
+
+<p>Change and save this file.. Notice what happened in your terminal.</p>
+
+<pre><code>&gt; Change detected, rebuilding site
+
+&gt; 29 pages created
+&gt; 0 tags index created
+&gt; in 26 ms
+</code></pre>
+
+<p>Refresh the browser and observe that the typo is now fixed.</p>
+
+<p>Notice how quick that was. Try to refresh the site before it&rsquo;s finished building.. I double dare you.
+Having nearly instant feedback enables you to have your creativity flow without waiting for long builds.</p>
+
+<h2 id="step-4-have-fun">Step 4. Have fun</h2>
+
+<p>The best way to learn something is to play with it.</p>
+
+    </p>
+    
+    <hr>
+  </div>
+
+  
+
+
+      </div>
+      <div class="row" id="sidebar">
+  <div class="column">
+
+  
+    <h4>About</h4>
+    <p>A place to talk about technology and things I&rsquo;m distinctly passionate about. Static websites, fintech, AI, and much much more.</p>
+  
+
+  
+
+  <h4>Recent Posts</h4>
+  <ul>
+    
+      <li><a href="/2018/07/writing-about-alice-cooper/">
+        Writing About Alice Cooper
+      </a></li>
+    
+      <li><a href="/2018/07/the-damn-giants-causeway/">
+        The Damn Giants Causeway
+      </a></li>
+    
+      <li><a href="/2018/06/building-a-site-with-hugo-github-and-netlify/">
+        Building A Site With Hugo, Github and Netlify
+      </a></li>
+    
+      <li><a href="/2018/05/building-a-site-with-hugo-github-and-netlify/">
+        Building A Site With Hugo, Github and Netlify
+      </a></li>
+    
+      <li><a href="/2014/09/creating-a-new-theme/">
+        Creating a New Theme
+      </a></li>
+    
+  </ul>
+
+  
+    <h4>Links</h4>
+    <ul>
+      
+        <li><a href="https://gerardmcgarry.com">
+          Gerard McGarry
+        </a></li>
+      
+        <li><a href="https://interwebworld.co.uk">
+          Interweb World
+        </a></li>
+      
+    </ul>
+  
+
+  <p><a href="http://localhost:1313/2014/04/getting-started-with-hugo/#">Back to top</a></p>
+  </div>
+</div>
+
+    </main>
+  </div>
+
+  <footer id="colophon" class="blog-footer row">
+    <div class="column">
+      <p>
+        
+        Typewriter Theme for Hugo by <a href='https://gerardmcgarry.com'>Gerard McGarry</a>.
+        
+      </p>
+    </div>
+  </footer>
+
+  <script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10&v=2"></' + 'script>')</script></body>
+</html>
