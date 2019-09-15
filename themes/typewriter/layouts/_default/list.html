@@ -1,10 +1,9 @@
 {{ define "main" }}
 
 {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
-{{ range $paginator.Pages }}
+{{ range .Pages }}
   {{ .Render "summary" }}
 {{ end }}
-
 {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
   <div>
     {{ if and (.Paginator.HasPrev) (.Paginator.HasNext) }}

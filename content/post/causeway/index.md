@@ -1,5 +1,5 @@
 ---
-author: "Interweb"
+author: "interweb"
 date: 2018-07-19
 draft: false
 linktitle: The Damn Giants Causeway

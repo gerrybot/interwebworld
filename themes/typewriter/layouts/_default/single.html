@@ -1,21 +1,20 @@
 {{ define "title" }}{{ .Title | markdownify }} | {{ .Site.Title }}{{ end }}
 {{ define "main" }}
   {{ $dateFormat := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
+  {{ $machineDate := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
 
-  <div class="blog-post">
+  <article itemscope itemtype="https://schema.org/BlogPosting" class="blog-post block-layout">
     <header class="entry-header">
-      <h1 class="entry-title">{{ .Title | markdownify }}</h1>
+      <h1  itemprop="headline" class="entry-title">{{ .Title | markdownify }}</h1>
       <div class="entry-meta">
-        <span>{{ .Params.author | default .Site.Params.author }}</span>
-        <span>{{ .Date.Format $dateFormat }}</span>
-        <span>{{ if (.Params.categories) }}{{ partial "meta-categories.html" . }}{{ end }}
+        <span itemprop="creator" itemscope itemtype="https://schema.org/Person"><i class="fas fa-user"></i> <span itemprop="name">{{ .Params.author | default .Site.Params.author }}</span></span>
+        <time itemprop="datePublished" datetime="{{ .Date }}"><i class="fas fa-calendar-week"> </i> {{ .Date.Format $dateFormat }}</time>
+        <span><i class="fas fa-tags"></i> {{ if (.Params.categories) }}{{ partial "meta-categories.html" . }}{{ end }}
         {{ if (.Params.tags) }}{{ partial "meta-tags.html" . }}{{ end }}</span>
       </div>
     </header>
 
-    <p>
-      {{ .Content }}
-    </p>
+    {{ .Content }}
     {{ if .IsTranslated }}
       <h4>{{ i18n "translations" }}</h4>
       <ul>
@@ -26,8 +25,17 @@
         {{ end }}
       </ul>
     {{ end }}
-    <hr>
-  </div>
+
+    {{ if isset .Params "author" }}
+
+    {{ $author := index .Site.Data.authors .Params.author }}
+    {{ $author.bio}}
+
+    {{ else }}
+      <p>Unknown</p>
+    {{ end }}
+
+  </article>
 
   {{ if .Site.DisqusShortname }}
     {{ partial "disqus.html" . }}

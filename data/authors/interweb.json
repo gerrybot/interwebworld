@@ -1,0 +1,11 @@
+{
+	"name": "Interweb World",
+	"bio": "Contributed content from readers of Interweb World",
+	"image": "path/to/avatar.jpg",
+	"social": {
+		"twitter": "interweb",
+		"facebook": "",
+		"instagram": "",
+		"website": ""
+	}
+}

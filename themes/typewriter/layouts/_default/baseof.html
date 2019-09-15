@@ -28,39 +28,12 @@
     {{ template "_internal/google_analytics_async.html" . }}
     {{ partial "head-custom.html" . }}
 
+    <script src="https://kit.fontawesome.com/f6a5e35c35.js"></script>
   </head>
 
 <body>
 
-  <header class="nav">
-    <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li><a href="{{ .Site.BaseURL | absLangURL }}">{{ .Site.Title | safeHTML }}</a></li>
-        </ul>
-      </div>
-      <div class="top-bar-right">
-        <ul class="menu">
-          <li class="{{ if .IsHome }}active{{ end }}"><a href="{{ .Site.BaseURL | absLangURL }}">{{ i18n "home" }}</a></li>
-          {{ if .Site.Params.custom_navbar }}
-            {{ range .Site.Menus.navbar }}
-              <li><a href="{{.URL | absURL }}" title="{{ .Name | plainify }}">{{ .Name }}</a></li>
-            {{ end }}
-          {{ else }}
-            {{ range where .Site.Pages "Type" "!=" "post" }}
-              <li><a href="{{ .Permalink }}">
-                {{ .Title }}
-              </a></li>
-            {{ end }}
-          {{ end }}
-        </ul>
-      </div>
-    </div>
-  </header>
-
-
-  <div id="page" class="container">
-
+  <div id="page">
     <main>
       <header id="branding" role="banner">
       {{ if .Params.featureimage }}
@@ -77,6 +50,12 @@
           <!-- The part of the page that begins to differ between templates -->
         {{ end }}
       </div>
+      <div id="thebrand">
+        <div class="block-layout">
+        <h2><a href="{{ .Site.BaseURL }}" rel="home">{{ .Site.Title }}</a></h2>
+        </div>
+      </div>
+
       {{ partial "sidebar.html" . }}
     </main>
   </div>

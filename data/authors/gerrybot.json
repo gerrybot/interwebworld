@@ -1,0 +1,11 @@
+{
+	"name": "Gerard McGarry",
+	"bio": "Gerard is a contributing writer for Interweb World",
+	"image": "path/to/avatar.jpg",
+	"social": {
+		"twitter": "interweb",
+		"facebook": "",
+		"instagram": "",
+		"website": ""
+	}
+}
