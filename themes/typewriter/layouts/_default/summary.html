@@ -1,18 +1,21 @@
 {{ $dateFormat := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
 
-<div class="blog-post block-layout">
-  <h3>
-    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-  </h3>
-  <div class="entry-meta">
-      <div class="entry-meta">
-        <span>{{ .Params.author | default .Site.Params.author }}</span>
-        <span>{{ .Date.Format $dateFormat }}</span>
-      </div>
+<div class="blog-card">
+  <a href="{{ .Permalink }}">
+    {{ if .Params.featureimage }}
+    {{ $original := .Page.Resources.GetMatch .Params.featureimage }}
+    <image src="{{ $original.RelPermalink }}" alt="{{ safeHTML .Title }}" caption="{{ safeHTML .Title }}">
+    {{ end }}
+  </a>
+  <div class="card-meta">
+    <h3>
+      <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+    </h3>
+    <div class="entry-meta">
+        <div class="entry-meta">
+          <span itemprop="creator" itemscope itemtype="https://schema.org/Person"><i class="fas fa-user"></i> <span itemprop="name">{{ .Params.author | default .Site.Params.author }}</span></span>
+          <time itemprop="datePublished" datetime="{{ .Date }}"><i class="fas fa-calendar-week"> </i> {{ .Date.Format $dateFormat }}</time>
+        </div>
+    </div>
   </div>
-  <p>
-    {{ .Summary }}
-  </p>
-  <a href='{{ .Permalink }}'>{{ i18n "readMore" }}</a>
-  <hr>
 </div>
