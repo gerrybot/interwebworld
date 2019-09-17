@@ -3,11 +3,11 @@
   {{ $dateFormat := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
   {{ $machineDate := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
 
-  <article itemscope itemtype="https://schema.org/BlogPosting" class="blog-post block-layout">
+  <article itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/BlogPosting" class="blog-post block-layout">
     <header class="entry-header">
       <h1  itemprop="headline" class="entry-title">{{ .Title | markdownify }}</h1>
       <div class="entry-meta">
-        <span itemprop="creator" itemscope itemtype="https://schema.org/Person"><i class="fas fa-user"></i> <span itemprop="name">{{ .Params.author | default .Site.Params.author }}</span></span>
+        <span itemprop="creator" itemscope itemtype="https://schema.org/Person"><i class="fas fa-user"></i> <span itemprop="name" rel="author">{{ .Params.author | default .Site.Params.author }}</span></span>
         <time itemprop="datePublished" datetime="{{ .Date }}"><i class="fas fa-calendar-week"> </i> {{ .Date.Format $dateFormat }}</time>
         <span><i class="fas fa-tags"></i> {{ if (.Params.categories) }}{{ partial "meta-categories.html" . }}{{ end }}
         {{ if (.Params.tags) }}{{ partial "meta-tags.html" . }}{{ end }}</span>

@@ -38,7 +38,7 @@
       <header id="branding" role="banner">
       {{ if .Params.featureimage }}
       {{ $original := .Page.Resources.GetMatch .Params.featureimage }}
-      <image src="{{ $original.RelPermalink }}" alt="{{ safeHTML .Title }}" caption="{{ safeHTML .Title }}">
+      <image src="{{ $original.RelPermalink }}" alt="{{ safeHTML .Title }}" itemprop="photo" caption="{{ safeHTML .Title }}">
       {{ else }}
       <img src="{{ .Site.Params.featureimage }}" class="hero" />
       {{ end }}
