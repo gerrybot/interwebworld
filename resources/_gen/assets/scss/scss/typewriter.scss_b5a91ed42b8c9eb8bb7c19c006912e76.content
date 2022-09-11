@@ -279,6 +279,9 @@ figcaption {
     padding-top: 40px; }
     #branding img {
       border-radius: 8px 8px 0px 0px; }
+    #branding #thebrand {
+      border-top: 1px solid #0190AF;
+      border-radius: 8px 8px 0 0; }
   #main {
     padding: 0; }
   .block-layout {

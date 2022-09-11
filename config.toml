@@ -77,7 +77,7 @@ paginate = 10
 
   [params.sidebar]
     # Optional about block for sidebar (can be Markdown)
-    about = "A place to talk about technology and things I'm distinctly passionate about. Static websites, fintech, AI, and much much more."
+    # about = "A place to talk about technology and things I'm distinctly passionate about. Static websites, fintech, AI, and much much more."
 
     # How many posts to show on the sidebar (Default: 5)
     #num_recent_posts = 2

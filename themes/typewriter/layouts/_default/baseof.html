@@ -36,11 +36,13 @@
   <div id="page">
     <main>
       <header id="branding" role="banner">
+      {{ if ( not .IsPage ) }}
+      {{ partial "brand.html" . }}
+      {{ end }}
+
       {{ if .Params.featureimage }}
       {{ $original := .Page.Resources.GetMatch .Params.featureimage }}
       <image src="{{ $original.RelPermalink }}" alt="{{ safeHTML .Title }}" itemprop="photo" caption="{{ safeHTML .Title }}">
-      {{ else }}
-      <img src="{{ .Site.Params.featureimage }}" class="hero" />
       {{ end }}
       </header>
 
@@ -49,13 +51,10 @@
           <!-- The part of the page that begins to differ between templates -->
         {{ end }}
       </div>
-      <div id="thebrand">
-        <div class="block-layout">
-        <h2><a href="{{ .Site.BaseURL }}" rel="home">{{ .Site.Title }}</a></h2>
-        </div>
-      </div>
 
-      {{ partial "sidebar.html" . }}
+      {{ if .IsPage }}
+      {{partial "brand.html" . }}
+      {{ end }}
     </main>
   </div>
 

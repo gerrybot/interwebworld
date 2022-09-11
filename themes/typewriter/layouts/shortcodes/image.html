@@ -8,7 +8,7 @@
           {{ (.Resize "320x").RelPermalink }} 320w,
           {{ (.Resize "640x").RelPermalink }} 640w,
           {{ (.Resize "1200x").RelPermalink }} 2x"
-        src="{{ (.Resize "600x").RelPermalink }}" alt="{{$altText}}"/>
+        src="{{ (.Resize "600x").RelPermalink }}" alt="{{$altText}}" title="{{ $altText }}"/>
     </a>
     {{ if $caption }}
     <figcaption><p>{{ $caption }}</p></figcaption>

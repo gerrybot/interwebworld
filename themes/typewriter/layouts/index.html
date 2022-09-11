@@ -1,0 +1,18 @@
+{{ define "main" }}
+
+{{ .Content }}
+
+<main>
+    <article>
+        <h2>Hi Mom</h2>
+        <p>Honestly, nothing to see here since 2010</p>
+    </article>
+    {{ range first 10 .Data.Pages }}
+        <article>
+            <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+            <h3>{{ .Date.Format "Monday 2 January 2006" }} - {{ .ReadingTime }} min read</h3>
+            {{ .Summary }}
+        </article>
+    {{ end }}
+</main>
+{{ end }}
